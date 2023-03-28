@@ -1,0 +1,16 @@
+PODS:
+  - IconButton (0.1.0)
+
+DEPENDENCIES:
+  - IconButton (from `../`)
+
+EXTERNAL SOURCES:
+  IconButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IconButton: 1d0c17fe0ed20ad3efce4a58d66c7b1f54ea662d
+
+PODFILE CHECKSUM: 2b1ba5f27479346ed269cf948f58c42e3a8e941f
+
+COCOAPODS: 1.11.3
