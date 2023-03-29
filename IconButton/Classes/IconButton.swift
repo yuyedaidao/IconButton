@@ -52,6 +52,11 @@ open class IconButton: UIControl {
         }
     }
     
+    public init() {
+        super.init(frame: .zero)
+        commonInit()
+    }
+    
     public init(target: Any? = nil, action: Selector? = nil) {
         super.init(frame: .zero)
         guard let action = action else {
