@@ -19,7 +19,7 @@ open class IconButton: UIControl {
     
     private lazy var backgroundImageView: UIImageView = UIImageView()
     private let imageView = UIImageView()
-    private let titleLabel = UILabel()
+    public private(set) var titleLabel = UILabel()
     
     private var titleMap: [UIControl.State.RawValue : String] = [:]
     private var titleColorMap: [UIControl.State.RawValue : UIColor] = [:]
@@ -74,6 +74,7 @@ open class IconButton: UIControl {
     private func commonInit(){
         layoutMargins = contentInsets
         addSubview(stackView)
+        stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
