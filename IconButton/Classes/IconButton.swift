@@ -135,21 +135,21 @@ open class IconButton: UIControl {
         }
     }
     
-    open func setTitle(_ title: String?, for state: UIControl.State) {
+    @objc open func setTitle(_ title: String?, for state: UIControl.State) {
         titleMap[state.rawValue] = title
         if state == self.state {
             titleLabel.text = title ?? titleMap[UIControl.State.normal.rawValue]
         }
     }
 
-    open func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
+    @objc open func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         titleColorMap[state.rawValue] = color
         if state == self.state {
             titleLabel.textColor = color ?? titleColorMap[UIControl.State.normal.rawValue]
         }
     }
 
-    open func setImage(_ image: UIImage?, for state: UIControl.State) {
+    @objc open func setImage(_ image: UIImage?, for state: UIControl.State) {
         guard let image = image else {
             return
         }
@@ -159,7 +159,7 @@ open class IconButton: UIControl {
         }
     }
 
-    open func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) {
+    @objc open func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) {
         guard let image = image else {
             return
         }
