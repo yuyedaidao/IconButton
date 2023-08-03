@@ -52,6 +52,10 @@ open class IconButton: UIControl {
         }
     }
     
+    public var iconView: UIImageView {
+        return imageView
+    }
+    
     public init() {
         super.init(frame: .zero)
         commonInit()
