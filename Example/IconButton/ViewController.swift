@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         iconButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         iconButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         iconButton.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        iconButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
             iconButton.isSelected = true
         })

@@ -80,10 +80,16 @@ open class IconButton: UIControl {
         addSubview(stackView)
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
+        stackView.leadingAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.leadingAnchor).isActive = true
+        stackView.topAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.topAnchor).isActive = true
+        stackView.trailingAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.bottomAnchor).isActive = true
+        var constraint = stackView.centerXAnchor.constraint(equalTo: centerXAnchor)
+        constraint.priority = .required
+        constraint.isActive = true
+        constraint = stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        constraint.priority = .required
+        constraint.isActive = true
         imageView.contentMode = .scaleAspectFit
         imageView.setContentHuggingPriority(.required, for: .vertical)
         imageView.setContentHuggingPriority(.required, for: .horizontal)
