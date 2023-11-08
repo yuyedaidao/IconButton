@@ -215,4 +215,8 @@ open class IconButton: UIControl {
         }
     }
 
+    // 防止点击事件会另外让父视图识别触发
+    open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
 }
