@@ -177,6 +177,11 @@ open class IconButton: UIControl {
             addSubview(backgroundImageView)
             sendSubviewToBack(backgroundImageView)
             backgroundImageView.isUserInteractionEnabled = false
+            backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         }
         backgroundImageMap[state.rawValue] = image
         if state == self.state {
