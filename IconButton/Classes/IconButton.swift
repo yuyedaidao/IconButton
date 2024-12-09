@@ -30,8 +30,7 @@ open class IconButton: UIControl {
         
     public var contentInsets: UIEdgeInsets = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 6) {
         didSet {
-            layoutMargins = contentInsets
-            layoutMarginsDidChange()
+            directionalLayoutMargins = NSDirectionalEdgeInsets(top: contentInsets.top, leading: contentInsets.left, bottom: contentInsets.bottom, trailing: contentInsets.right)
         }
     }
     
@@ -81,13 +80,10 @@ open class IconButton: UIControl {
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        stackView.topAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.topAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
         stackView.trailingAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.bottomAnchor).isActive = true
-        var constraint = stackView.centerXAnchor.constraint(equalTo: centerXAnchor)
-        constraint.priority = .required
-        constraint.isActive = true
-        constraint = stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
+        let constraint = stackView.centerXAnchor.constraint(equalTo: centerXAnchor)
         constraint.priority = .required
         constraint.isActive = true
         imageView.contentMode = .scaleAspectFit
