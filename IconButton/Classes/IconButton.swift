@@ -23,6 +23,7 @@ open class IconButton: UIControl {
     
     private var titleMap: [UIControl.State.RawValue : String] = [:]
     private var titleColorMap: [UIControl.State.RawValue : UIColor] = [:]
+    private var backgroundColorMap: [UIControl.State.RawValue : UIColor] = [:]
     private var backgroundImageMap: [UIControl.State.RawValue : UIImage] = [:]
     private var imageMap: [UIControl.State.RawValue : UIImage] = [:]
     
@@ -152,6 +153,13 @@ open class IconButton: UIControl {
         titleColorMap[state.rawValue] = color
         if state == self.state {
             titleLabel.textColor = color ?? titleColorMap[UIControl.State.normal.rawValue]
+        }
+    }
+
+    @objc open func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
+        backgroundColorMap[state.rawValue] = color
+        if state == self.state {
+            backgroundColor = color ?? backgroundColorMap[UIControl.State.normal.rawValue]
         }
     }
 
