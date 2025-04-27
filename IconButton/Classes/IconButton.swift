@@ -106,7 +106,7 @@ open class IconButton: UIControl {
         titleLabel.textColor = titleColorMap[state.rawValue] ?? titleColorMap[defaultState]
         let image = imageMap[state.rawValue] ?? imageMap[defaultState]
         imageView.image = image
-        
+        backgroundColor = backgroundColorMap[state.rawValue] ?? backgroundColorMap[defaultState] ?? backgroundColor
         if !backgroundImageMap.isEmpty {
             backgroundImageView.image = backgroundImageMap[state.rawValue] ?? backgroundImageMap[defaultState]
         }
